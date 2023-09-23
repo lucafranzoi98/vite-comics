@@ -5,3 +5,30 @@
 @use './partials/variables' as *;
 
 // Scss of App (or create scss of each component in partials folder with "@use './partials/app_main';")
+
+
+header{
+   background-color: $dc-light;
+
+   .navbar{
+      max-width: 1170px;
+
+      a {
+      text-decoration: none;
+      color: $dc-dark;
+      font-size: $dc-font-size;
+      font-weight: 600;
+      }
+   }
+
+   
+   
+}
+
+main{
+   background-color: $dc-darker;
+
+   > div{
+      max-width: 1170px;
+   }
+}
