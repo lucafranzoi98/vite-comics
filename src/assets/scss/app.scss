@@ -16,13 +16,10 @@ header{
       a {
       text-decoration: none;
       color: $dc-dark;
-      font-size: $dc-font-size;
+      font-size: 0.75rem;
       font-weight: 600;
       }
-   }
-
-   
-   
+   }  
 }
 
 main{
@@ -31,4 +28,19 @@ main{
    > div{
       max-width: 1170px;
    }
+}
+
+footer{
+   .banner{
+      background-color: $dc-primary;
+
+      > .container {
+         max-width: 1170px;
+
+         span{
+            font-size: 0.75rem;
+         }
+      }
+   }
+
 }
