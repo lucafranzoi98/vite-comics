@@ -1,0 +1,7 @@
+// Bootstrap
+@use '/node_modules/bootstrap/scss/bootstrap.scss';
+
+// Variables
+@use './partials/variables' as *;
+
+// Scss of App (or create scss of each component in partials folder with "@use './partials/app_main';")
