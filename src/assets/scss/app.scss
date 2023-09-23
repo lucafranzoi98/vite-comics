@@ -33,12 +33,83 @@ main{
 footer{
    .banner{
       background-color: $dc-primary;
+      z-index: 100;
 
       > .container {
          max-width: 1170px;
 
          span{
             font-size: 0.75rem;
+         }
+      }
+   }
+
+   .site-map{
+      background-image: url("src/assets/img/footer-bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;  
+
+      > .container{
+         max-width: 1170px;
+
+         a {
+            text-decoration: none;
+            }
+
+         .site-map-page{
+         color: white;
+         text-transform: uppercase;
+         font-weight: 600;
+         font-size: 1rem;
+         }
+
+         .site-map-sub{
+            font-size: 0.65rem;
+
+            a{
+               color: rgb(169, 169, 169);
+            }
+            
+         }
+
+         img{
+            width: 475px;
+            height: 475px;
+            margin-top: -130px;
+            margin-bottom: -150px;
+         }
+      }
+
+      
+   }
+
+   .lower-footer{
+      background-color: $dc-dark;
+
+      > .container {
+         max-width: 1170px;
+
+         button{
+            color: white;
+            text-transform: uppercase;
+            border: 2px solid $dc-primary;
+            border-radius: 0;
+            font-size: 0.75rem;
+         }
+
+         a {
+            color: $dc-primary;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+         }
+         .social {
+
+            img {
+               width: 30px;
+               aspect-ratio: 1;
+            }
          }
       }
    }

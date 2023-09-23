@@ -7,7 +7,7 @@ export default{
 <template>
 
    <div class="banner">
-      <div class="container py-5 d-flex justify-content-around">
+      <div class="container py-4 d-flex justify-content-around">
          <div class="d-flex align-items-center">
             <img src="../assets/img/buy-comics-digital-comics.png" class="me-3" width="50">
             <span class="text-white text-uppercase">Digital comics</span>
