@@ -1,11 +1,10 @@
 <script>
+import navBarMenu from "../navBarMenu"
 export default{
    name: "AppHeader",
    data () {
       return {
-         navItems: [
-            "Characters", "Comics", "Movies", "Tv", "Games", "Collectibles", "Videos", "Fans", "News", "Shop"
-         ]
+         navBarMenu
       }
    },
 }
@@ -22,7 +21,7 @@ export default{
          </div>
             
          <div>
-            <a href="#" v-for="navItem in navItems" class="ms-4">{{ navItem.toUpperCase() }}</a>
+            <a href="#" v-for="navBarItem in navBarMenu" class="ms-4">{{ navBarItem.toUpperCase() }}</a>
          </div>
       </nav>   
    </header>
