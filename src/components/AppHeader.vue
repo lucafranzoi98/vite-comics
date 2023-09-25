@@ -13,21 +13,18 @@ export default{
 <template>
 
    <header>
-      <nav class="navbar m-auto py-3">
+      <nav class="navbar m-auto py-3 dc_max_width">
+         <a class="navbar-brand" href="#">
+            <img src="../assets/img/dc-logo.png" alt="DC" width="50">
+         </a>
+           
          <div>
-            <a class="navbar-brand" href="#">
-               <img src="../assets/img/dc-logo.png" alt="DC" width="50">
+            <a href="#" v-for="navBarItem in navBarMenu" class="ms-4">
+               {{ navBarItem.toUpperCase() }}
             </a>
          </div>
-            
-         <div>
-            <a href="#" v-for="navBarItem in navBarMenu" class="ms-4">{{ navBarItem.toUpperCase() }}</a>
-         </div>
-      </nav>   
+      </nav>  
+
    </header>
 
 </template>
-
-<style lang="scss" scoped>
-
-</style>

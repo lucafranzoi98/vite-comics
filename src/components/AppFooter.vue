@@ -1,61 +1,66 @@
 <script>
 import AppBanner from "./AppBanner.vue"
-import footerMenu from "../footerMenu"
+import footerMenu from "../footerMenu.js"
+import AppSiteMapItem from "./AppSiteMapItem.vue"
+import AppSocialIcon from "./AppSocialIcon.vue"
+import socialIcon from "../socialIcon.js"
 
 export default{
    name: "AppFooter",
    components: {
       AppBanner,
+      AppSiteMapItem,
+      AppSocialIcon
    },
    data () {
       return {
          footerMenu,
+         socialIcon
       }
    },
-
+   methods: {
+      getImagePath: function(img) {
+         return new URL (`../assets/img/${img}`, import.meta.url).href;
+      }
+   }
 }
 </script>
 
 <template>
+
    <footer>
+
+      <!-- Blue Banner -->
       <AppBanner></AppBanner>
 
       <div class="site-map">
-         <div class="container py-5 d-flex justify-content-between overflow-hidden">
+         <div class="pt-5 d-flex justify-content-between overflow-hidden dc_max_width m-auto">
 
-            <!-- Left Side Site Map -->
+            <!-- Left Side: Site Map -->
             <div class="footer-menu d-flex flex-column flex-wrap">
                
-               <div v-for="footerItem in footerMenu" class="me-3 mb-3">
-                  <a href="#" class="site-map-page">{{ footerItem.name }}</a>
-                  <div class="d-flex flex-column align-items-start">
-                     <a v-for="footerVoice in footerItem.voices" href="#" class="site-map-sub">{{ footerVoice }}</a>
-                  </div>
-               </div>
+               <AppSiteMapItem v-for="item in footerMenu" :name="item.name" :voices="item.voices"></AppSiteMapItem>
 
             </div>
                
 
-            <!-- Right Side Logo -->
+            <!-- Right Side: Logo -->
             <img src="../assets/img/dc-logo-bg.png">
          </div>
          
       </div>
 
       <div class="lower-footer">
-         <div class="container py-4 d-flex justify-content-between">
+
+         <div class="py-4 d-flex justify-content-between dc_max_width m-auto">
             
-            <button class="btn">Sign-up now!</button>
+            <button>Sign-up now!</button>
 
             <div class="d-flex align-items-center">
                <a href="#" class="me-3">Follow Us</a>
-               <div class="social">
-                  <a href="#" class="me-3"><img src="../assets/img/footer-facebook.png"></a>
-                  <a href="#" class="me-3"><img src="../assets/img/footer-twitter.png"></a>
-                  <a href="#" class="me-3"><img src="../assets/img/footer-youtube.png"></a>
-                  <a href="#" class="me-3"><img src="../assets/img/footer-pinterest.png"></a>
-                  <a href="#"><img src="../assets/img/footer-periscope.png"></a>
-               </div>
+
+               <AppSocialIcon v-for="item in socialIcon" :img=getImagePath(item.img)></AppSocialIcon>
+               
             </div>
          
          </div>

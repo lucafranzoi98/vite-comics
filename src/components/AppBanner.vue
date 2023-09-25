@@ -1,34 +1,35 @@
 <script>
+import bannerItems from "../bannerItems.js"
+import AppBannerItem from "./AppBannerItem.vue";
+
 export default{
    name: "AppBanner",
+   components: {
+      AppBannerItem
+   },
+   data (){
+      return{
+         bannerItems
+      }
+   },
+   methods: {
+      getImagePath: function(img) {
+         return new URL (`../assets/img/${img}`, import.meta.url).href;
+      }
+   }
 }
 </script>
 
 <template>
 
    <div class="banner">
-      <div class="container py-4 d-flex justify-content-around">
-         <div class="d-flex align-items-center">
-            <img src="../assets/img/buy-comics-digital-comics.png" class="me-3" width="50">
-            <span class="text-white text-uppercase">Digital comics</span>
-         </div>
-         <div class="d-flex align-items-center">
-            <img src="../assets/img/buy-comics-merchandise.png" class="me-3" width="50">
-            <span class="text-white text-uppercase">Dc merchandise</span>
-         </div>
-         <div class="d-flex align-items-center">
-            <img src="../assets/img/buy-comics-subscriptions.png" class="me-3" width="50">
-            <span class="text-white text-uppercase">Subscription</span>
-         </div>
-         <div class="d-flex align-items-center">
-            <img src="../assets/img/buy-comics-shop-locator.png" class="me-3" height="50">
-            <span class="text-white text-uppercase">Comic shop locator</span>
-         </div>
-         <div class="d-flex align-items-center">
-            <img src="../assets/img/buy-dc-power-visa.svg" class="me-3" width="50">
-            <span class="text-white text-uppercase">Dc power visa</span>
-         </div>
+
+      <div class="container py-5 d-flex justify-content-around dc_max_width">
+
+         <AppBannerItem v-for="item in bannerItems" :name=item.name :img=getImagePath(item.img)></AppBannerItem>
+         
       </div>
+
    </div>
 
 </template>
