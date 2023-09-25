@@ -25,11 +25,20 @@ export default{
          
       </div>
       <div class="lower-main">
-         <div class="row dc_max_width m-auto py-5">
+         <div class="dc_max_width m-auto py-5">
 
-            <AppComic v-for="comic in comics.comics" :name=comic.series :img=comic.thumb></AppComic>
+            <div class="row">
+               <AppComic v-for="comic in comics.comics" :name=comic.series :img=comic.thumb></AppComic>
+            </div>
 
+            
+            <div class="d-flex justify-content-center">
+               <a href="#" class="text-white px-5 py-2 load-more-btn text-uppercase">Load more</a>
+            </div>
+            
          </div>
+
+         
       </div>
    </main>
    
