@@ -3,9 +3,13 @@
 header{
    background-color: $dc-light;
 
-   a {
-   color: $dc-dark;
-   font-size: 0.75rem;
-   font-weight: 600;
-   } 
+   nav{
+      height: 100px; 
+
+      a {
+      color: $dc-dark;
+      font-size: 0.75rem;
+      font-weight: 600;
+      } 
+   }   
 }

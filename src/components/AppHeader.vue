@@ -13,15 +13,17 @@ export default{
 <template>
 
    <header>
-      <nav class="navbar m-auto py-3 dc_max_width">
-         <a class="navbar-brand" href="#">
-            <img src="../assets/img/dc-logo.png" alt="DC" width="50">
+      <nav class="m-auto dc_max_width d-flex justify-content-between align-items-center">
+         <a href="#">
+            <img src="../assets/img/dc-logo.png" alt="DC" width="70">
          </a>
            
-         <div>
-            <a href="#" v-for="navBarItem in navBarMenu" class="ms-4">
-               {{ navBarItem.toUpperCase() }}
-            </a>
+         <div class="h-100 d-flex">
+            <div v-for="item in navBarMenu" class="h-100 d-flex align-items-center ms-3 position-relative">
+               <a href="#" :class="(item.active ? 'active-page-navbar' : '')">
+                  {{ item.name.toUpperCase() }}
+               </a>
+            </div>            
          </div>
       </nav>  
 
